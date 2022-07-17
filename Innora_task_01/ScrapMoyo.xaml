@@ -1,0 +1,257 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ScrapAllo" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="in_Args" Type="InArgument(x:String)" />
+    <x:Property Name="in_PathToSaveResult" Type="InArgument(x:String)" />
+  </x:Members>
+  <sap:VirtualizedContainerService.HintSize>1132,2371</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="64">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Activities.DynamicUpdate</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Runtime.InteropServices</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="64">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>Microsoft.Bcl.AsyncInterfaces</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel.Activities</AssemblyReference>
+      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence sap:VirtualizedContainerService.HintSize="889,2306" sap2010:WorkflowViewState.IdRef="Sequence_5">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
+      <Variable x:TypeArguments="x:String" Default="[in_Args]" Name="Brand" />
+      <Variable x:TypeArguments="x:String" Name="siteUrl">
+        <Variable.Default>
+          <Literal x:TypeArguments="x:String">https://moyo.ua/</Literal>
+        </Variable.Default>
+      </Variable>
+      <Variable x:TypeArguments="x:String" Default="ua/telecommunication/smart/" Name="smartfoneParts" />
+    </Sequence.Variables>
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" DisplayName="Use Browser Edge: Смартфони Samsung – купити телефон Samsung у Києві, Україні | ALLO: ціни на телефо" sap:VirtualizedContainerService.HintSize="847,2214" sap2010:WorkflowViewState.IdRef="NApplicationCard_3" InteractionMode="Simulate" Version="V1">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence sap:VirtualizedContainerService.HintSize="813,1958" sap2010:WorkflowViewState.IdRef="Sequence_9">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <Sequence sap:VirtualizedContainerService.HintSize="771,1474" sap2010:WorkflowViewState.IdRef="Sequence_8">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="729,260" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
+                <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='RawPrice'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Name'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='NameURL'&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataNextLink' /&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='text'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='text' name2='Column2' attr2='href'&gt;&lt;webctrl tag='div' idx='4' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' idx='2' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='a' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="334,166" sap2010:WorkflowViewState.IdRef="NExtractData_2" LimitExtractionTo="Rows" MaximumResults="0">
+                  <uix:NExtractData.NextLink>
+                    <uix:TargetAnchorable BrowserURL="https://www.moyo.ua/ua/telecommunication/smart/samsung/?tile-mode=grid" DesignTimeRectangle="1011, 529, 220, 52" ElementType="Button" FriendlyName="'Показати ще 24'" FullSelectorArgument="&lt;webctrl aaname='Показати ще 24' tag='BUTTON' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Показати ще 24' tag='BUTTON' type='' check:text='Показати ще 24' /&gt;" ImageBase64="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" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ᐉ СМАРТФОНИ SAMSUNG – купити смартфони Самсунг в Києві та Україні | ціна та відгуки' /&gt;" SearchSteps="FuzzySelector, Image">
+                      <uix:TargetAnchorable.Anchors>
+                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                          <uix:Target DesignTimeRectangle="1073, 545, 126, 21" ElementType="Text" FriendlyName="'Показати ще 24'" FullSelectorArgument="&lt;webctrl aaname='Показати ще 24' parentid='main-wrap' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Показати ще 24' parentid='main-wrap' tag='SPAN' type='' check:text='Показати ще 24' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIIAAAAZCAYAAAD9ovZ9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAVISURBVGhD7ZjPSyNJFMf3b/Ew2jhq0I46Gn/FqMmuw8LKMIggElgkLIRcZIKIQWQiDGZh0EVQZFBkMAMyBESCIN5y9ObJm8fccsvtu6+qurqrOx2jmTjOoQ4fSOpXV9X71nuv6jdcv4JGo4Wg4WghaDhaCBqORwivUVwZRq4h/bi5UPtpXoLKaR+Ok+NY+GMKicQArk87fNtJKocDwn4bAZQ9dR4h9CDb9TvaGhJG/rvaT/OzKX8exXSNXWaQPawjhmIA2THWJorsfm2bukJIrAdQ2vOwHcIsr9dCeFEue5ExheHTm31kG/IMf89wu7WNDeHWp8/tqqg3Er2o+tTXFUL2UC23+B5EXAvh5bmgEL5GIWG12yk768cCt80ECgWlLeN0AHOszgyjUMdurRVCsQOVc0H1yqf+CVStcSoX7f71Fw2+ddVu11cufep/RS4brOkhpG3MYdy46jpRmI9xm85tvFbK3bRGCMUu5JenYFh9OWYU8bVuxQ11Iv/e05dULMaj2Cbj1ldS76AyDhFYDOJebsw3E+moWJiNOYWcEhvvNiIIqPVdMSQ+dYp6ew1+WHM7HBb/Uz32mLjsQS4i2sW3rLG81PST++kY5yblM8aVgdKHSfecByexu284bRpQ2Z7g/Yx/3K6/+t+IsEuEQgbtYXkrLMZX10a0QAiO4rjxE8PIxh1DTNvuyyMEe2Nj7k2h+Jf9cxy5LYp9O/1IW5uf+lcY+p4WYtAmZVl9ndhY3QthLj6E/E4A15syqRpHkd10mhJCBxnQ+g7RWiG042ZFjB14F+JzLpDbn+U5QATHp9bYD6EkgrtH/uXyoD2fEI6GMMbKKP7kz5y21f2QKJcGcAnB2dhpmpBf8mJD47gnTm6z6FP/th/3ssxDKcm+W7smuSk1hvUY1D5VFi0VwkUfUqwNE7ISDqo7o7ydseI2WC3OXo4lA669tBPEpT5UrLJnE4I9cE022o1drsYYcl/Yf0cIBxvWxv5FxvPGwkIAuwszwqMwD7NMp4P9dk3cQJFC0Szdn6dZGImMoqiIsLw/hEREeCljJIz00hT/3ZQQzmjN7HRGhpFfr9Perx8ve4QQZJ/BGb4eG2v+be+DNXd+Fe4hWTua3416QAoPeT6JY8dnFAK5fu7eyF2dsP+KR9hXcgPXvddAYZGVxzC3YnLXn09OioW6hECnYFM8bmXesQ2LYZZODv/+uYkEa29OIrdNV96dIIUasalPFkKy35qzmGfd9t5+zQhhLIyM69HO4nP9BK+uCBgPhkBJC4WAEys0UNnxN6dteXtcTNIcQYln7e4cwV6EK6TI74dQkp7i6xu3R7iirFp91bwKIGN9n1+bbCMG7DZ36016BIv4R1H/LEKQoYHti+LVOF5vqXD/aYJ7TSM6jNITXnntg+s6WC1JFslNL1lujE7mNHNr0agwsisR9CSLagJmK1qGE5Y4jSCXCGOAexWCT9zqMxhBaiWI6z0TB+T2XYKzhRnDAiWumXk5l+aEYMw7N5ZHC+GxcLfvJIvs9pNKCk+QYeFx0bRju4svQ55bkQePkVWeUQiE7/UngsxWlxIuvEJg/ajMunHIDa8evcGCvD7SxqRXQ+KhxJp45SSIzFspPAHLAw6OZIjpwO2aMxcjOopdCi/s95OFYFKie/6I9pKmhMD6duBua9S6KViw/OhDL8p+byCNvvPjQvhB7Ecc/0egp1AtNhhDPr54Y6OE5lL9VR+S5IHyJoLKI9iPPsg9ldYKQfM4CibSLIQumw/eCH4mWggajhaChqOFoOFoIWg4WggajhaChniF/wGNxilNBB5t6AAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, Image" />
+                        </scg:List>
+                      </uix:TargetAnchorable.Anchors>
+                    </uix:TargetAnchorable>
+                  </uix:NExtractData.NextLink>
+                  <uix:NExtractData.Target>
+                    <uix:TargetAnchorable DesignTimeRectangle="190, 301, 1540, 5378" FriendlyName="'DIV'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;main&amp;gt;div&amp;gt;div' parentid='main-wrap' tag='DIV' /&gt;" InformativeScreenshot="98c41c466cc4e903b43161d7e9d46195.png" ScopeSelectorArgument="&lt;html app='msedge.exe' title='ᐉ СМАРТФОНИ SAMSUNG – купити смартфони Самсунг в Києві та Україні | ціна та відгуки' /&gt;" SearchSteps="Selector" />
+                  </uix:NExtractData.Target>
+                </uix:NExtractData>
+              </Sequence>
+              <ui:AddDataColumn x:TypeArguments="x:Int32" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" DefaultValue="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="Price" DataTable="[ExtractDataTable]" DisplayName="Add Column &quot;Price&quot;" sap:VirtualizedContainerService.HintSize="729,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_4" />
+              <ui:AddDataColumn x:TypeArguments="x:String" AllowDBNull="{x:Null}" AutoIncrement="{x:Null}" Column="{x:Null}" MaxLength="{x:Null}" Unique="{x:Null}" ColumnName="SiteURL" DataTable="[ExtractDataTable]" DefaultValue="[siteUrl]" DisplayName="Add Column &quot;SiteURL&quot;" sap:VirtualizedContainerService.HintSize="729,22" sap2010:WorkflowViewState.IdRef="AddDataColumn`1_1" />
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="729,956" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="695,835" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="653,288" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                        <TryCatch.Try>
+                          <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_6">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Object">[CurrentRow(1)]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Object">[CurrentRow(1).ToString.Substring(CurrentRow(1).ToString.IndexOf("S"))]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                        </TryCatch.Try>
+                        <TryCatch.Catches>
+                          <Catch x:TypeArguments="s:ArgumentOutOfRangeException" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ActivityAction x:TypeArguments="s:ArgumentOutOfRangeException">
+                              <ActivityAction.Argument>
+                                <DelegateInArgument x:TypeArguments="s:ArgumentOutOfRangeException" Name="exception" />
+                              </ActivityAction.Argument>
+                            </ActivityAction>
+                          </Catch>
+                        </TryCatch.Catches>
+                      </TryCatch>
+                      <Assign sap:VirtualizedContainerService.HintSize="653,61" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="x:Object">[CurrentRow(2)]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="x:String">[siteUrl + CurrentRow(2).ToString]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <If Condition="[CurrentRow(0).Equals(string.Empty)]" sap:VirtualizedContainerService.HintSize="653,314" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If.Then>
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,155" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_4">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[CurrentRow(3)]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[0]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Then>
+                        <If.Else>
+                          <Sequence sap:VirtualizedContainerService.HintSize="304,155" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="262,61" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Object">[CurrentRow(3)]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Object">[Cdbl(CurrentRow(0).ToString.Substring(0, CurrentRow(0).ToString.IndexOf("грн")).Replace(chr(160), string.Empty).Trim)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </If.Else>
+                      </If>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
+            <ui:RemoveDataColumn Column="{x:Null}" ColumnName="{x:Null}" ColumnIndex="0" DataTable="[ExtractDataTable]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="771,22" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
+            <ui:ExcelApplicationScope Password="{x:Null}" DisplayName="Excel Application Scope" sap:VirtualizedContainerService.HintSize="771,288" sap2010:WorkflowViewState.IdRef="ExcelApplicationScope_1" InstanceCachePeriod="3000" WorkbookPath="[in_PathToSaveResult + &quot;\&quot;+ Brand.ToLower + &quot;_&quot; + System.Text.RegularExpressions.Regex.Match(siteUrl, &quot;(?&lt;=//)\w+(?=.)&quot;).Value + &quot;.xlsx&quot;]">
+              <ui:ExcelApplicationScope.Body>
+                <ActivityAction x:TypeArguments="ui:WorkbookApplication">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="ui:WorkbookApplication" Name="ExcelWorkbookScope" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="376,179" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ExcelWriteRange AddHeaders="True" DataTable="[ExtractDataTable]" DisplayName="Write Range" sap:VirtualizedContainerService.HintSize="334,87" sap2010:WorkflowViewState.IdRef="ExcelWriteRange_1" SheetName="Sheet1" StartingCell="A1" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ExcelApplicationScope.Body>
+            </ui:ExcelApplicationScope>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="-8, -8, 1936, 1048" BrowserType="Edge" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACSSURBVFhH7ddNCoAgEAVgj9TNhMQS2kQE0Sn7uYB7N+WESxGaceHiPXi40Zlvq2oyzprDDeZhNb7VWndpFC80KITAKr1d5smLEFLAfZ0yhBRApwhRA0BlI2oBqCxETQD1N0IC2Lf1Q+Q6DsanFeXQ5dxwaWluWlEOAAAAAAAAAAAAAAAAONvzP6elxrlpRStR6gWLjIjCxmpi7wAAAABJRU5ErkJggg==" InformativeScreenshot="8adbcdd93b5665177e6e541cc2099575.png" Selector="&lt;html app='msedge.exe' title='Смартфони Samsung – купити телефон Samsung у Києві, Україні | ALLO: ціни на телефони Samsung'/&gt;" Url="[siteUrl + smartfoneParts + Brand.ToLower]" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
